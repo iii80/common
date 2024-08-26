@@ -1369,7 +1369,7 @@ function organize_firmware() {
 	if [[ `ls -1 | grep -c "armvirt"` -eq '0' ]]; then
 		#rename -v "s/^openwrt/$COMPILE_DATE_MD-$SOURCE-$LUCI_EDITION-$LINUX_KERNEL/" *
 		#rename -v "s/^openwrt/OpenWrt_${CONFIG_FILE}_${Firmware_Date}/" *
-		rename -v "s/^openwrt/OpenWrt_${CONFIG_FILE}_${COMPILE_DATE_HM}/" *
+		rename -v "s/^openwrt/OpenWrt_${CONFIG_FILE}_$(date +%Y%m%d%H%M)/" *
 	fi
 	
 	release_info	
