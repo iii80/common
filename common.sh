@@ -1020,10 +1020,10 @@ function firmware_settings() {
 	# 固件自动更新相关信息等(用于luci-app-autoupdate插件)
 	local file_openwrt_autoupdate="$FILES_PATH/etc/openwrt_autoupdate"
 	local github_api_origin="$GITHUB_REPOSITORY_URL/releases/download/$AUTOUPDATE_TAG/$GITHUB_API"
-	local github_api_ghproxy="https://mirror.ghproxy.com/$GITHUB_REPOSITORY_URL/releases/download/$AUTOUPDATE_TAG/$GITHUB_API"
+	local github_api_ghproxy="https://gh-proxy.com/$GITHUB_REPOSITORY_URL/releases/download/$AUTOUPDATE_TAG/$GITHUB_API"
 	local github_api_fastgit="https://download.fastgit.org/$GITHUB_REPOSITORY/releases/download/$AUTOUPDATE_TAG/$GITHUB_API"
 	local release_download_origin="$GITHUB_REPOSITORY_URL/releases/download/$AUTOUPDATE_TAG"
-	local release_download_ghproxy="https://mirror.ghproxy.com/$GITHUB_REPOSITORY_URL/releases/download/$AUTOUPDATE_TAG"
+	local release_download_ghproxy="https://gh-proxy.com/$GITHUB_REPOSITORY_URL/releases/download/$AUTOUPDATE_TAG"
 	cat > "$file_openwrt_autoupdate" <<-EOF
 	GITHUB_REPOSITORY="$GITHUB_REPOSITORY"
 	GITHUB_REPOSITORY_URL="https://github.com/$GITHUB_REPOSITORY"
@@ -1113,7 +1113,7 @@ function compile_info() {
 		__red_color "固件更新"
 		echo "--------------------------------------------------------------------------------"
 		__white_color "1、PVE运行："
-		__green_color "wget https://mirror.ghproxy.com/https://raw.githubusercontent.com/roacn/pve/main/openwrt.lxc.sh -O /usr/bin/openwrt && chmod +x /usr/bin/openwrt"
+		__green_color "wget https://gh-proxy.com/https://raw.githubusercontent.com/iii80/pve-sh/main/openwrt.lxc.sh -O /usr/bin/openwrt && chmod +x /usr/bin/openwrt"
 		__white_color "2、PVE运行："
 		__green_color "openwrt"
 		echo
